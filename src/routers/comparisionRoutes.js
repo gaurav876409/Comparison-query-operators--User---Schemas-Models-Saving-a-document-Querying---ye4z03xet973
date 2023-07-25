@@ -13,6 +13,11 @@ const User = require('../models/userModel');
 router.get('/eq', async (req, res) => {
   try {
     //Write a code here for eq operator
+    const users = await User.find({
+      age: { $eq: 20 },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
@@ -22,6 +27,11 @@ router.get('/eq', async (req, res) => {
 router.get('/gt', async (req, res) => {
   try {
     //Write a code here for gt operator
+    const users = await User.find({
+      age: { $gt: 20 },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
@@ -32,6 +42,11 @@ router.get('/gt', async (req, res) => {
 router.get('/gte', async (req, res) => {
   try {
     //Write a code here for gte operator
+    const users = await User.find({
+      age: { $gte: 20 },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
@@ -42,6 +57,11 @@ router.get('/gte', async (req, res) => {
 router.get('/lt', async (req, res) => {
   try {
     //Write a code here for lt operator
+    const users = await User.find({
+      age: { $lt: 20 },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
@@ -52,6 +72,11 @@ router.get('/lt', async (req, res) => {
 router.get('/lte', async (req, res) => {
   try {
     //Write a code here for lte operator
+    const users = await User.find({
+      age: { $lte: 20 },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
@@ -62,6 +87,11 @@ router.get('/lte', async (req, res) => {
 router.get('/in', async (req, res) => {
   try {
     //Write a code here for in operator
+    const users = await User.find({
+      age: { $in: [20, 25] },
+    });
+
+    res.status(200).json(users);
   } catch (error) {
     res.status(404).send(error);
   }
